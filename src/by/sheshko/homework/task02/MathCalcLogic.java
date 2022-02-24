@@ -4,10 +4,9 @@ import java.util.Stack;
 
 public class MathCalcLogic {
 
-    public double calculateRPN(String expressionRPN) {
+    public double calculateRPN(final String expressionRPN) {
         Stack<Double> stackOfDigits = new Stack<>();
         StringBuilder builder = new StringBuilder();
-
 
         for (int i = 0; i < expressionRPN.length(); i++) {
             char currentChar = expressionRPN.charAt(i);
@@ -42,16 +41,15 @@ public class MathCalcLogic {
                         stackOfDigits.push(temp);
                         continue;
                     }
+
+                    default -> throw new IllegalStateException("Unexpected value: " + currentChar);
                 }
             }
 
-
-                if (currentChar!=' ' || !builder.isEmpty()){
-                    stackOfDigits.push(Double.valueOf(builder.toString()));
-                    builder.setLength(0);
-                }
-
-
+            if (currentChar != ' ' || !builder.isEmpty()) {
+                stackOfDigits.push(Double.valueOf(builder.toString()));
+                builder.setLength(0);
+            }
         }
         return stackOfDigits.pop();
     }

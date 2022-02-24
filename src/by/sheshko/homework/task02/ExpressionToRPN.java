@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ExpressionToRPN {
 
-    private static int checkSignPriority(char sign) {
+    private static int checkSignPriority(final char sign) {
         int priority = 0;
 
         if (sign == '*' || sign == '/') {
@@ -19,7 +19,7 @@ public class ExpressionToRPN {
         return priority;
     }
 
-    public String convertToRPN(String expression) {
+    public String convertToRPN(final String expression) {
         StringBuilder builder = new StringBuilder();
         Stack<Character> symbolsStack = new Stack<>();
 
@@ -41,8 +41,6 @@ public class ExpressionToRPN {
                     while (!symbolsStack.empty()) {
                         if (checkSignPriority(symbolsStack.peek()) >= currentPriority) {
                             builder.append(symbolsStack.pop());
-
-
                         } else {
                             break;
                         }
