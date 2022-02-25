@@ -2,7 +2,7 @@ package by.sheshko.homework.task02;
 
 import java.util.Stack;
 
-public class MathCalcLogic {
+public class MathCalculatorLogic {
 
     public double calculateRPN(final String expressionRPN) {
         Stack<Double> stackOfDigits = new Stack<>();

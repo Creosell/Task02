@@ -1,16 +1,17 @@
 package by.sheshko.homework.task02;
 
+/**
+ * Класс MathCalculator является основным в библиотеке и используется
+ * для взаимодействия всех составляющих библиотеку классов.
+ */
 public class MathCalculator {
 
     public static void main(final String[] args) {
-        MathCalculator calculator = new MathCalculator();
-
-        System.out.println(calculator.calculateExpression("2/03)*(200)+1"));
     }
 
     public double calculateExpression(final String expression) {
-        MathCalcLogic logic = new MathCalcLogic();
-        ExpressionToRPN rpn = new ExpressionToRPN();
+        MathCalculatorLogic logic = new MathCalculatorLogic();
+        ExpressionToReversePolishNotation rpn = new ExpressionToReversePolishNotation();
 
         return logic.calculateRPN(rpn.convertToRPN(expression));
     }

@@ -3,7 +3,7 @@ package by.sheshko.homework.task02;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
-public class ExpressionToRPN {
+public class ExpressionToReversePolishNotation {
 
     private int checkSignPriority(final char sign) {
         int priority = 0;
