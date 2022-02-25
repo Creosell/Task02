@@ -20,11 +20,12 @@ public class ExpressionToRPN {
     }
 
     public String convertToRPN(final String expression) {
+        String formattedExpression = expression.trim();
         StringBuilder builder = new StringBuilder();
         Stack<Character> symbolsStack = new Stack<>();
 
-        for (int i = 0; i < expression.length(); i++) {
-            char currentChar = expression.charAt(i);
+        for (int i = 0; i < formattedExpression.length(); i++) {
+            char currentChar = formattedExpression.charAt(i);
             int currentPriority = checkSignPriority(currentChar);
 
             switch (currentPriority) {

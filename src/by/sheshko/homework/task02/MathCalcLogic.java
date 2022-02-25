@@ -42,11 +42,13 @@ public class MathCalcLogic {
                         continue;
                     }
 
-                    default -> throw new IllegalStateException("Unexpected value: " + currentChar);
+                    default -> {
+                        throw new IllegalStateException("Unexpected value: " + currentChar);
+                    }
                 }
             }
 
-            if (currentChar != ' ' || !builder.isEmpty()) {
+            if (!builder.isEmpty()) {
                 stackOfDigits.push(Double.valueOf(builder.toString()));
                 builder.setLength(0);
             }
