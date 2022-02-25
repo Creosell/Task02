@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class ExpressionToRPN {
 
-    private static int checkSignPriority(final char sign) {
+    private int checkSignPriority(final char sign) {
         int priority = 0;
 
         if (sign == '*' || sign == '/') {
@@ -25,6 +25,10 @@ public class ExpressionToRPN {
         StringBuilder builder = new StringBuilder();
         Stack<Character> symbolsStack = new Stack<>();
 
+        if (formattedExpression.matches("(.+(-\\d+).+)|(.+[+\\-*/]-\\d+.+)")) {
+            throw new RuntimeException("One of numbers is not natural!");
+        }
+
         for (int i = 0; i < formattedExpression.length(); i++) {
             char currentChar = formattedExpression.charAt(i);
             int currentPriority = checkSignPriority(currentChar);
@@ -36,7 +40,6 @@ public class ExpressionToRPN {
                         while (checkSignPriority(symbolsStack.peek()) != 1) {
                             builder.append(symbolsStack.pop());
                         }
-
                         symbolsStack.pop();
                     } catch (EmptyStackException e) {
                         throw new RuntimeException("Missing opening bracket!");
