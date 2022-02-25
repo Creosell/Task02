@@ -1,5 +1,6 @@
 package by.sheshko.homework.task02;
 
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class ExpressionToRPN {
@@ -20,7 +21,7 @@ public class ExpressionToRPN {
     }
 
     public String convertToRPN(final String expression) {
-        String formattedExpression = expression.trim();
+        String formattedExpression = expression.replaceAll("[^\\d+\\-*/()]|\\s", "");
         StringBuilder builder = new StringBuilder();
         Stack<Character> symbolsStack = new Stack<>();
 
@@ -31,10 +32,15 @@ public class ExpressionToRPN {
             switch (currentPriority) {
                 case -1 -> {
                     builder.append(" ");
-                    while (checkSignPriority(symbolsStack.peek()) != 1) {
-                        builder.append(symbolsStack.pop());
+                    try {
+                        while (checkSignPriority(symbolsStack.peek()) != 1) {
+                            builder.append(symbolsStack.pop());
+                        }
+
+                        symbolsStack.pop();
+                    } catch (EmptyStackException e) {
+                        throw new RuntimeException("Missing opening bracket!");
                     }
-                    symbolsStack.pop();
                 }
                 case 1 -> symbolsStack.push(currentChar);
                 case 2, 3 -> {
