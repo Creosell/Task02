@@ -8,7 +8,7 @@ import java.util.Stack;
 public class MathCalculatorLogic {
 
     /**
-     * Вычисляет результат выражения в виде Reverse Polish Notation.
+     * Вычисляет результат выражения вида Reverse Polish Notation.
      *
      * @param expressionRPN Выражение в виде Reverse Polish Notation
      * @return Возвращает оставшийся в стеке элемент, который является
