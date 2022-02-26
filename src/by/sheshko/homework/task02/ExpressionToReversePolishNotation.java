@@ -37,7 +37,8 @@ public class ExpressionToReversePolishNotation {
      *
      * @param expression выражение пользователя
      * @return выражение в виде Reverse Polish Notation
-     * @throws RuntimeException если в выражении пропущена открывающая скобка
+     * @throws RuntimeException если в выражении присутствует хотя бы одно
+     *                          ненатуральное число или пропущена открывающая скобка
      */
     public String convertToRPN(final String expression) {
         String formattedExpression = expression.replaceAll("[^\\d+\\-*/()]|\\s", "");
