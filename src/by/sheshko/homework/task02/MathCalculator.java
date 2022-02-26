@@ -5,7 +5,7 @@ package by.sheshko.homework.task02;
  * для взаимодействия всех составляющих библиотеку классов.
  */
 public class MathCalculator {
-//
+
     public static void main(final String[] args) {
     }
 

@@ -6,7 +6,7 @@ import java.util.Stack;
  * Класс MathCalculatorLogic отвечает за выполнение арифметических операций.
  */
 public class MathCalculatorLogic {
-//
+
     /**
      * Вычисляет результат выражения в виде Reverse Polish Notation.
      *
