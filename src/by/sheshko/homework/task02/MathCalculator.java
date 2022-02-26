@@ -9,6 +9,13 @@ public class MathCalculator {
     public static void main(final String[] args) {
     }
 
+    /**
+     * Метод calculateExpression задействует классы библиотеки
+     * для расчёта результата выражения.
+     *
+     * @param expression выражение, переданное пользователем
+     * @return результат вычисления выражения
+     */
     public double calculateExpression(final String expression) {
         MathCalculatorLogic logic = new MathCalculatorLogic();
         ExpressionToReversePolishNotation rpn = new ExpressionToReversePolishNotation();

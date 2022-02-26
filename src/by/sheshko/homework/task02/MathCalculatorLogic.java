@@ -2,8 +2,19 @@ package by.sheshko.homework.task02;
 
 import java.util.Stack;
 
+/**
+ * Класс MathCalculatorLogic отвечает за выполнение арифметических операций.
+ */
 public class MathCalculatorLogic {
 
+    /**
+     * Вычисляет результат выражения в виде Reverse Polish Notation.
+     *
+     * @param expressionRPN Выражение в виде Reverse Polish Notation
+     * @return Возвращает оставшийся в стеке элемент, который является
+     * результатом вычислений.
+     * @throws IllegalStateException если символ в выражении нельзя обработать.
+     */
     public double calculateRPN(final String expressionRPN) {
         Stack<Double> stackOfDigits = new Stack<>();
         StringBuilder builder = new StringBuilder();

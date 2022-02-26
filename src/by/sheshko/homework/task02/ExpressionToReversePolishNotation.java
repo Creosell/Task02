@@ -3,8 +3,19 @@ package by.sheshko.homework.task02;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+/**
+ * Класс ExpressionToReversePolishNotation предназначен для преобразования
+ * выражения пользователя в выражение типа Reverse Polish Notation.
+ */
 public class ExpressionToReversePolishNotation {
 
+    /**
+     * Метод проверяет приоритет передаваемого в него арифметического знака.
+     * В случае передачи числа приоритет остает равен 0.
+     *
+     * @param sign один из знаков арифметических операций или число
+     * @return приоритет передаваемого знака
+     */
     private int checkSignPriority(final char sign) {
         int priority = 0;
 
@@ -20,6 +31,14 @@ public class ExpressionToReversePolishNotation {
         return priority;
     }
 
+    /**
+     * Метод convertToRPN преобразует выражение, предостовляемое пользователем
+     * в выражение вида Reverse Polish Notation.
+     *
+     * @param expression выражение пользователя
+     * @return выражение в виде Reverse Polish Notation
+     * @throws RuntimeException если в выражении пропущена открывающая скобка
+     */
     public String convertToRPN(final String expression) {
         String formattedExpression = expression.replaceAll("[^\\d+\\-*/()]|\\s", "");
         StringBuilder builder = new StringBuilder();
