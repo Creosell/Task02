@@ -8,7 +8,7 @@ import java.util.Stack;
  * выражения пользователя в выражение типа Reverse Polish Notation.
  */
 public class ExpressionToReversePolishNotation {
-
+//
     /**
      * Метод проверяет приоритет передаваемого в него арифметического знака.
      * В случае передачи числа приоритет остает равен 0.
